@@ -15,6 +15,9 @@ on:
             - 'ci/**'
     workflow_dispatch:
 
+env:
+    IMAGE_NAME: thiagodd/apolo-health-care
+
 jobs:
     tests:
         name: Tests runner
