@@ -3,16 +3,9 @@ name: CI Pipeline
 on:
     pull_request:
         branches:
-            - main
-            - master
             - develop
             - 'hotfix/**'
             - 'release/**'
-    push: # Remove
-        branches:
-            - 'feature/**'
-            - 'bugfix/**'
-            - 'ci/**'
     workflow_dispatch:
 
 env:
@@ -51,13 +44,3 @@ jobs:
                 run: ./gradlew bootBuildImage --imageName=${{ env.IMAGE_NAME }}:${{ env.BUILD_TAG }}
             -   name: Set BUILD_TAG
                 run: echo BUILD_TAG=$(echo ${{ github.head_ref || github.ref_name }} | sed "s,/,_,g")-${{ github.run_number }} >> $GITHUB_ENV
-            # Opcional: Login e Push para o Docker Hub
-            -  name: Log in to Docker Hub
-               if: github.ref == 'refs/heads/main' # Só executa no branch principal
-               uses: docker/login-action@v2
-               with:
-                   username: ${{ secrets.DOCKER_HUB_USER }}
-                   password: ${{ secrets.DOCKER_HUB_PWD }}
-            - name: Push Image
-              if: github.ref == 'refs/heads/main' # Só executa no branch principal
-              run: docker push ${{ env.IMAGE_NAME }}:${{ env.BUILD_TAG }}
