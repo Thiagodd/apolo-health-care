@@ -42,5 +42,3 @@ jobs:
                 run: echo BUILD_TAG=$(echo ${{ github.head_ref || github.ref_name }} | sed "s,/,_,g")-${{ github.run_number }} >> $GITHUB_ENV
             -   name: Build Image
                 run: ./gradlew bootBuildImage --imageName=${{ env.IMAGE_NAME }}:${{ env.BUILD_TAG }}
-            -   name: Set BUILD_TAG
-                run: echo BUILD_TAG=$(echo ${{ github.head_ref || github.ref_name }} | sed "s,/,_,g")-${{ github.run_number }} >> $GITHUB_ENV
