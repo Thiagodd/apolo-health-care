@@ -5,10 +5,15 @@ plugins {
 }
 
 group = 'com.thiagodd'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.1'
 
 java {
 	sourceCompatibility = '21'
+}
+
+bootJar {
+    archiveBaseName = 'apolo-health-care'
+    destinationDirectory = file("$rootDir/build/libs")
 }
 
 repositories {
@@ -23,10 +28,15 @@ dependencies {
 	implementation 'org.flywaydb:flyway-mysql'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'com.mysql:mysql-connector-j'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.32'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.32'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.2'
+    testImplementation 'org.mockito:mockito-junit-jupiter:5.11.0'
+
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.2'
 }
 
-tasks.named('test') {
-	useJUnitPlatform()
+tasks.named("test") {
+    useJUnitPlatform()
 }
