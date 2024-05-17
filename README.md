@@ -51,6 +51,18 @@ Key features of **Apolo Health Care**:
 - [ Docker compose ](https://docs.docker.com/compose/)
 - [ Vavr.io ](https://github.com/vavr-io/vavr)
 
+## How to run
+
+**Navigate to the docker folder**
+```bash
+cd /docker
+```
+
+**Run the docker compose up**
+```bash
+docker compose up
+```
+
 ## License
 
 This project is licensed under the **MIT license**. Feel free to edit and distribute this template as you like.

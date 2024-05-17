@@ -1,0 +1,48 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.5'
+    id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.thiagodd.apolo.health.care.infrastructure'
+version = '0.0.1'
+
+repositories {
+    mavenCentral()
+}
+
+bootJar{
+    archiveBaseName = 'apolo-health-care'
+    destinationDirectory = file("$rootDir/build/libs")
+}
+
+bootBuildImage{
+    imageName = 'thiagodd/apolo-health-care'
+}
+
+dependencies {
+    implementation(project(":domain"))
+    implementation(project(":application"))
+
+    implementation('org.springdoc:springdoc-openapi-webmvc-core:1.6.14')
+    implementation('org.springdoc:springdoc-openapi-ui:1.6.14')
+
+    implementation ('org.springframework.boot:spring-boot-starter-web'){
+        exclude module: 'spring-boot-starter-tomcat'
+    }
+    implementation('org.springframework.boot:spring-boot-starter-undertow')
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+
+    runtimeOnly 'org.postgresql:postgresql'
+
+    implementation('org.yaml:snakeyaml:2.2') {
+        version { strictly("2.2") }
+    }
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
