@@ -1,5 +1,5 @@
 postgresql:
     username: postgres
     password: postgres
-    database: postgres
+    database: apolo-health-care
     url: localhost:5432
