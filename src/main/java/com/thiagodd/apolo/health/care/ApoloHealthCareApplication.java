@@ -1,4 +1,4 @@
-package com.thiagodd.apolo.health.care.infrastructure;
+package com.thiagodd.apolo.health.care;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

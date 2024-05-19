@@ -1,4 +1,4 @@
-package com.thiagodd.apolo.health.care.infrastructure.controller;
+package com.thiagodd.apolo.health.care.api.controller;
 
 
 import org.springframework.http.ResponseEntity;

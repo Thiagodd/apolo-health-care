@@ -1,5 +1,2 @@
 rootProject.name = 'apolo-health-care'
-include 'application'
-include 'domain'
-include 'infrastructure'
 
