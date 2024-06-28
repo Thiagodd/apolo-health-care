@@ -15,7 +15,7 @@ Apolo Health Care is an open source hospital system designed to facilitate patie
 <div align="center">
 <br />
 
-[![license](https://img.shields.io/github/license/Thiagodd/apolo-health-care.svg?style=flat-square)](LICENSE)
+[![license](https://img.shields.io/github/license/thiagodd/apolo-health-care.svg?style=flat-square)](LICENSE)
 
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg?style=flat-square)](https://github.com/Thiagodd/apolo-health-care/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
 [![made with hearth by thiagodd](https://img.shields.io/badge/made%20with%20%E2%99%A5%20by-Thiagodd-ff1414.svg?style=flat-square)](https://github.com/dec0dOS)

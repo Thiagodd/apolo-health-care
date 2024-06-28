@@ -2,4 +2,4 @@ postgresql:
     username: postgres
     password: postgres
     database: apolo-health-care
-    url: localhost:5432
+    url: postgresql:5432
